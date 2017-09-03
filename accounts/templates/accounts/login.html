@@ -9,5 +9,6 @@
         {% bootstrap_form form %}
         <input type="submit" value="Login" class="btn btn-default">
     </form>
+    <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
 </div>
 {% endblock %}
