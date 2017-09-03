@@ -3,56 +3,26 @@
 
 {% block content %}
 <div class="container">
-    <h1>Login</h1>
-    <form method="POST">
+    <h1 class="text-center">Login</h1>
+    <div class="col-md-6 col-md-offset-3">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" value="Login" class="btn btn-default">
+       <div class="text-center">
+        <input type="submit" value="Login" class="btn btn-default"></div>
     </form>
-    <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
+    <hr>
+    <div class="row">
+    <div class="col-md-6 text-center">  <a href="{% url 'social:begin' 'github' %}"><i class="fa fa-github" aria-hidden="true" style="font-size: -webkit-xxx-large;
+"></i></a><br></div>
 
-<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+  	<div class="col-md-6 text-center">
+    <a href="{% url 'social:begin' 'facebook' %}"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size: -webkit-xxx-large;
+"></i></a>
+    </div>
+    </div>
 </div>
-<!-- <script>
-console.log("facebook script running");
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-
-{
-    status: 'connected',
-    authResponse:{
-        accessToken: '...',
-        expiresIn:'...',
-        signedRequest:'...',
-        userID:'...'
-    }
-}
-
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1429535260447869',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-    FB.AppEvents.logPageView();   
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script> -->
-
+    <form method="POST">
+</div>
 {% endblock %}
 
 	
