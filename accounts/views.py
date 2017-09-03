@@ -49,12 +49,12 @@ def toRegister(request):
 
             profile.save()
 
-            registered = Trueprofile_form = UserProfileForm()
+            registered = True
         else:
             print(user_form.errors, profile_form.errors)
     else:
         user_form = UserForm()
-
+        profile_form = UserProfileForm()
     return render(request, 'accounts/signup.html', {
         'user_form': user_form,
         'profile_form': profile_form,

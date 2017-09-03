@@ -23,11 +23,11 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User  # connected to already defined mode in django.
-        fields = ('username', 'email', 'password')
+        fields = ('username', 'email', 'password',)
 
 
 class UserProfileForm(forms.ModelForm):
 
     class Meta():
         model = UserProfileInfo
-        fields = ('portfolio_site', 'profile_pic')
+        fields = ('portfolio_site', 'profile_pic', 'interest','city','state')
