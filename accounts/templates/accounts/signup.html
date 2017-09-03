@@ -5,10 +5,16 @@
 {% block content %}
 <div class="container">
     <h1>Sign Up</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <input type="submit" value="Sign Up" class="btn btn-default">
-    </form>
+{#    <form method="POST">#}
+{#        {% csrf_token %}#}
+{#        {% bootstrap_form form %}#}
+{#        <input type="submit" value="Sign Up" class="btn btn-default">#}
+{#    </form>#}
+<form method='POST' enctype="multipart/form-data" action="{% url 'groups:all' %}">
+                     {% csrf_token %}
+    {% bootstrap_form user_form %}
+    {% bootstrap_form profile_form %}
+    <input type="submit" value="Register">
+                </form>
 </div>
 {% endblock %}
